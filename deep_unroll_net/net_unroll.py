@@ -6,7 +6,7 @@ import numpy as np
 from correlation_package import Correlation
 
 from package_core.net_basics import *
-from Custom_layers import ForwardShift
+from forward_warp_package import *
 
 def generate_2D_grid(H, W):
     x = torch.arange(0, W, 1).float().cuda() 
@@ -312,34 +312,34 @@ class Net_flow_unroll(nn.Module):
         c12, c11, c10 = feat_im1
 
         B,C,H,W=c12.size()
-        warper2 = ForwardShift.create_with_implicit_mesh(B, C, H, W, 2, 0.5)
+        warper2 = ForwardWarp.create_with_implicit_mesh(B, C, H, W, 2, 0.5)
         if self.est_vel:
             grid_rows=generate_2D_grid(H, W)[1]
             t_flow_ref_to_row0=grid_rows.unsqueeze(0).unsqueeze(0)
             if self.pred_middle_gs:
                 t_flow_ref_to_row0=t_flow_ref_to_row0-H//2
             flow2=flow2*t_flow_ref_to_row0
-        c12_warped, mask2, _ = warper2(c12, flow2)
+        c12_warped, mask2 = warper2(c12, flow2)
 
         B,C,H,W=c11.size()
-        warper1 = ForwardShift.create_with_implicit_mesh(B, C, H, W, 2, 0.5)
+        warper1 = ForwardWarp.create_with_implicit_mesh(B, C, H, W, 2, 0.5)
         if self.est_vel:
             grid_rows=generate_2D_grid(H, W)[1]
             t_flow_ref_to_row0=grid_rows.unsqueeze(0).unsqueeze(0)
             if self.pred_middle_gs:
                 t_flow_ref_to_row0=t_flow_ref_to_row0-H//2
             flow1=flow1*t_flow_ref_to_row0
-        c11_warped, mask1, _ = warper1(c11, flow1)
+        c11_warped, mask1 = warper1(c11, flow1)
 
         B,C,H,W=c10.size()
-        warper0 = ForwardShift.create_with_implicit_mesh(B, C, H, W, 2, 0.5)
+        warper0 = ForwardWarp.create_with_implicit_mesh(B, C, H, W, 2, 0.5)
         if self.est_vel:
             grid_rows=generate_2D_grid(H, W)[1]
             t_flow_ref_to_row0=grid_rows.unsqueeze(0).unsqueeze(0)
             if self.pred_middle_gs:
                 t_flow_ref_to_row0=t_flow_ref_to_row0-H//2
             flow0=flow0*t_flow_ref_to_row0
-        c10_warped, mask0, _ = warper0(c10, flow0)
+        c10_warped, mask0 = warper0(c10, flow0)
 
         # image decoder 
         im = self.im_decoder(c12_warped, c11_warped, c10_warped)
