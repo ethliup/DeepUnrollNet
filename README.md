@@ -4,7 +4,7 @@ This repository contains the code and datasets to reproduce the results from the
 paper [Deep Shutter Unrolling Network](https://drive.google.com/open?id=14NYguVp129ydRtRzhhU8H8QIiE0coK6x) by [Peidong Liu](http://people.inf.ethz.ch/liup/), 
 [Zhaopeng Cui](https://zhpcui.github.io), [Viktor Larsson](http://people.inf.ethz.ch/vlarsson/) and [Marc Pollefeys](https://inf.ethz.ch/personal/marc.pollefeys/). Additional supplementary materials can be found from [supp](https://drive.google.com/open?id=1ox9X-pYMgnSPP_hkeso21bUL_QoKJcrp).
 
-We present a novel network architecture for rolling shutter effect rectification problem. We also contribute two large datasets for deep network training and evaluation. Our network takes two consecutive rolling shutter images and predicts the corresponding global shutter image of the latest frame. Our network only requires ground truth global shutter image for supervision. Following examples demonstrate that our network is able to correct the rolling shutter distortions.
+We present a novel network architecture for rolling shutter effect rectification. We also contribute two large datasets for deep network training and evaluation. Our network takes two consecutive rolling shutter images and predicts the corresponding global shutter image of the latest frame. Our network only requires ground truth global shutter image for supervision. Following examples demonstrate that our network is able to correct the rolling shutter distortions.
 
 <img src="teaser_img/fastec.gif" height="280px"/> <img src="teaser_img/carla.gif" height="280px"/>
 
