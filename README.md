@@ -50,7 +50,7 @@ python setup.py install
 You can now test our code with the provided images in the `demo` folder.
 To do this, simply run
 ```
-bash download_pretrained_models.sh
+sh download_pretrained_models.sh
 sh demo.sh
 ```
 
