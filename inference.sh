@@ -3,14 +3,14 @@
 # !! Updata the path to the dataset and directory to 
 # !! save your trained models with your own local path !!
 carla_dataset_type=Carla
-carla_root_path_test_data=/media/peidong/Windows1/2020-05-15-leonhard-cluster-backup/datasets/unreal/2019_10_20_Carla_RS_dataset/test
+carla_root_path_test_data=path_to_carla_rs/test
 
 fastec_dataset_type=Fastec
-fastec_root_path_test_data=/media/peidong/Windows1/2020-05-15-leonhard-cluster-backup/datasets/fastec/rolling_shutter/test_0206/
+fastec_root_path_test_data=path_to_fastec_rs/test/
 
 model_dir=../experiments/pretrained_models/
 
-results_dir=/home/peidong/Desktop/deep_unroll_results/
+results_dir=path_to_results_dir/
 
 #
 cd deep_unroll_net
