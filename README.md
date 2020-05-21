@@ -16,7 +16,7 @@ If you find our code, datatsets or paper useful, please consider citing:
 @InProceedings{Liu2020CVPR,
   author = {Peidong Liu and Zhaopeng Cui and Viktor Larsson and Marc Pollefeys},
   title = {Deep Shutter Unrolling Network},
-  booktitle = {Proc. IEEE Conf. on Computer Vision and Pattern	Recognition (CVPR)}},
+  booktitle = {Proc. IEEE Conf. on Computer Vision and Pattern	Recognition (CVPR)},
   year = {2020}
 }
 ```
