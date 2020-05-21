@@ -70,7 +70,7 @@ can download them as follows.
 * [Carla test data](https://drive.google.com/open?id=1rvN0q5KF9BTxBOx4oOyxJKzX8XkUB-zM):
   the test data (~2G) from the Carla rolling shutter dataset.
 
-## Code used to generate/synthesize the Carla rolling shutter dataset
+## Code used to synthesize the Carla rolling shutter dataset
 We also release the source code, which is used to synthesize the Carla rolling shutter dataset by using an Unreal game engine. 
 For more information, please visit our project website on [Github](https://github.com/ethliup/UnrealCV).
 
